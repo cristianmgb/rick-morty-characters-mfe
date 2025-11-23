@@ -12,5 +12,6 @@ export function useGetCharacterByName(name: string) {
   return useQuery({
     queryKey: ['character-by-name', name],
     queryFn: () => fetchCharacterByName(name),
+    enabled: !!name,
   });
 }
