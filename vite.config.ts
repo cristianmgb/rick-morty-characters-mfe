@@ -18,6 +18,7 @@ export default defineConfig({
         '@emotion/react',
         '@emotion/styled',
         'rick-morty-components-lib',
+        '@tanstack/react-query',
       ],
     }),
   ],
