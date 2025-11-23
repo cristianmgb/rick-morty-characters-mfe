@@ -27,8 +27,8 @@ export const CharactersList = ({ characters }: { characters: Character[] }) => {
   const [selectedTab, setSelectedTab] = useState<string | number>('all');
 
   const { onFavoriteChange } = useFavorite({
-    characters: characters || [],
-    favorites: favorites || [],
+    characters: characters,
+    favorites: favorites,
     setFavorites,
   });
 
@@ -70,13 +70,7 @@ export const CharactersList = ({ characters }: { characters: Character[] }) => {
             position: 'absolute',
           }}
         >
-          <Box
-            fontWeight={600}
-            fontSize={24}
-          >
-            {characterList?.length}
-          </Box>
-          Personajes
+          {characterList?.length} Personajes
         </Typography>
       </Box>
       <Box
@@ -100,7 +94,7 @@ export const CharactersList = ({ characters }: { characters: Character[] }) => {
               location={character.location.name}
               gender={character.gender}
               image={character.image}
-              variant={variantMap[deviceType] ?? 'horizontal-normal'}
+              variant={variantMap[deviceType]}
               onFavoriteChange={onFavoriteChange}
             />
           ))
